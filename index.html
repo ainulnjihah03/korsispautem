@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FF6D00">
+  <meta name="description" content="SISPA MediaHub — pengurusan tugasan dan bahan media Kor SISPA UTeM untuk rujukan bersama.">
+  <title>SISPA MediaHub | Kor SISPA UTeM</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=20261014-24">
+  <script src="script.js?v=20261014-29" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#tasks"><span class="brand-icon"><img src="images/logo_sispa.PNG" alt="Logo Kor SISPA UTeM" width="38" height="42"></span><span>SISPA<span class="orange"> MediaHub</span><small>PENGURUSAN TUGASAN DAN BAHAN MEDIA</small></span></a>
+    <p class="nav-label">RUANG KERJA</p>
+    <nav aria-label="Navigasi utama"><button data-page="tasks" class="nav-item active"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i> Semua Tugasan <span id="nav-count">0</span></button><button data-page="library" class="nav-item"><i class="fa-regular fa-images" aria-hidden="true"></i> Bahan Media</button><button data-page="gallery" class="nav-item"><i class="fa-solid fa-address-card" aria-hidden="true"></i> Gambar</button><button data-page="videos" class="nav-item"><i class="fa-solid fa-video" aria-hidden="true"></i> Video</button></nav>
+    <div class="sidebar-bottom"><button id="theme-toggle" class="theme-button"><i class="fa-regular fa-moon" aria-hidden="true"></i> <span>Mod Gelap</span></button><small class="sidebar-credit">KOR SISPA UTeM · UNIT MEDIA</small></div>
+  </aside>
+  <main>
+    <header class="topbar"><span>Ruang kerja <span class="slash">/</span> <strong id="breadcrumb">Semua Tugasan</strong></span><span class="local-badge"><span></span> Rujukan bersama</span></header>
+    <div id="storage-warning" class="warning" hidden></div>
+    <div id="content"></div>
+    <footer>SISPA MediaHub <span>Memudahkan urusan pasukan media.</span></footer>
+  </main>
+  <dialog id="modal" aria-labelledby="modal-title"><div id="modal-content"></div></dialog>
+  <dialog id="preview" aria-labelledby="preview-title"><div id="preview-content"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript>Sila aktifkan JavaScript untuk menggunakan SISPA MediaHub.</noscript>
+</body>
+</html>
+

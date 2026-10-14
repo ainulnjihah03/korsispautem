@@ -1,0 +1,85 @@
+SISPA MEDIAHUB — PANDUAN KEMAS KINI
+
+Laman ini untuk rujukan bersama. Tiada muat naik atau suntingan melalui laman.
+Semua kandungan diterbitkan daripada data/kandungan.json dan folder bahan/.
+Data lama dalam LocalStorage/IndexedDB tidak dibaca dan tidak dipadam.
+Pilihan mod cerah/gelap sahaja disimpan dalam pelayar masing-masing.
+
+CARA TAMBAH GAMBAR ATAU DOKUMEN
+1. Masukkan fail ke bahan/gambar-ahli/, bahan/carta-organisasi/ atau bahan/dokumen/.
+2. Buka data/kandungan.json. Cari nama ahli dalam albums.
+3. Tambah objek berikut dalam attachments album tersebut:
+{
+  "id": "gambar-ainul-01",
+  "name": "ainul.jpg",
+  "type": "image/jpeg",
+  "size": 123456,
+  "category": "Images",
+  "createdAt": "2026-10-14T00:00:00.000Z",
+  "path": "bahan/gambar-ahli/ainul.jpg"
+}
+Gantikan nilai contoh dengan nilai sebenar. size ialah saiz dalam bait.
+Setiap id mesti unik. Pisahkan objek dengan koma; jangan letak koma selepas objek terakhir.
+Satu ahli boleh mempunyai beberapa objek lampiran atau senarai kosong [].
+Nama fail dan huruf besar/kecil mesti sama tepat dengan path.
+Kategori fail: Images, Videos, Documents, Design Files, Other.
+Jenis biasa: image/jpeg, image/png, video/mp4, application/pdf.
+Fail dalam folder sahaja tidak disenaraikan automatik: tambahkan juga metadata di atas.
+
+CARA KEMAS KINI TUGASAN
+Dalam tasks, ubah title, description, assignedTo, dueDate (YYYY-MM-DD), notes.
+Status dan keutamaan tidak digunakan. Kekalkan id sedia ada.
+Peringatan automatik bermula 3 hari sebelum dueDate hingga hari siaran. Pada dueDate + 3 hari, tugasan turun ke bawah (SEMUA kekal di atas). Tarikh mengikut waktu Malaysia. Peringatan hanya dalam laman, bukan pemberitahuan ketika laman ditutup.
+
+TERBITKAN KE GITHUB PAGES
+1. Muat naik index.html, style.css, script.js, .nojekyll, folder images/, data/ dan bahan/ ke repositori yang sama.
+2. Dalam Settings > Pages, pilih Deploy from a branch, main, / (root), kemudian Save.
+3. Selepas penerbitan berjaya, buka pautan GitHub Pages.
+4. Untuk kemas kini, ubah fail yang berkaitan dan hantar perubahan ke repositori yang sama. Tunggu penerbitan berjaya kemudian muat semula laman.
+Tidak perlu memuat naik folder simpanan-fail atau fail panduan ini.
+
+Semua bahan yang diterbitkan boleh diakses melalui laman. Hanya sertakan bahan yang dibenarkan untuk paparan awam. Tiada kata laluan pentadbir atau kunci rahsia diperlukan dalam kod.
+
+FOLDER GAMBAR
+PEGAWAI BERSEKUTU KOR SISPA UTeM: bahan/gambar-ahli/pegawai-bersekutu/ (assignedTo: "pegawai-bersekutu")
+PEGAWAI ANGKATAN PERTAHANAN AWAM (KOR SISPA UTeM): bahan/gambar-ahli/pegawai-apm/ (assignedTo: "pegawai-apm")
+SKUAD SENIOR SESI 2026/2027: bahan/gambar-ahli/skuad-senior/ (assignedTo: "skuad-senior")
+SKUAD INTERMEDIATE SESI 2026/2027: bahan/gambar-ahli/skuad-intermediate/ (assignedTo: "skuad-intermediate")
+SKUAD JUNIOR SESI 2026/2027: bahan/gambar-ahli/skuad-junior/ (assignedTo: "skuad-junior")
+Gunakan assignedTo yang sepadan pada album baharu dalam data/kandungan.json. Setiap album mempunyai id, title, description, assignedTo, dueDate kosong, schedule kosong, notes kosong, createdAt, attachments dan links.
+
+Gambar pegawai kini menggunakan images/<nama folder>/1.png. Untuk gambar tambahan, gunakan 2.png, 3.png dan tambah metadata lampiran pada album yang sama. Nama folder dan path mesti sepadan tepat.
+
+CARTA ORGANISASI 2026/2027
+Folder fizikal: images/Carta Organisasi 2026-2027/ (tanda / dalam sesi diganti - untuk nama folder).
+Subfolder dan assignedTo album:
+JAWATANKUASA KEPIMPINAN KOR SISPA UTeM: carta-kepimpinan
+PEGAWAI BERSEKUTU KOR SISPA UTeM: carta-pegawai-bersekutu
+PEGAWAI ANGKATAN PERTAHANAN AWAM (KOR SISPA UTeM): carta-pegawai-apm
+Tambah fail dan metadata album ke data/kandungan.json untuk memaparkannya.
+
+HALAMAN VIDEO
+Letakkan video dalam bahan/video/ dan tambah rekod berikut ke senarai videos dalam data/kandungan.json. Gantikan nilai contoh dengan butiran sebenar, gunakan ID unik dan saiz dalam bait. Video dipaparkan mengikut abjad. Tiada muat naik melalui laman.
+{
+  "id": "video-program-01",
+  "title": "Video Program",
+  "description": "Rakaman program Kor SISPA UTeM",
+  "assignedTo": "video",
+  "dueDate": "",
+  "notes": "",
+  "createdAt": "2026-10-14T00:00:00.000Z",
+  "links": [],
+  "attachments": [{
+    "id": "fail-video-program-01",
+    "name": "program.mp4",
+    "type": "video/mp4",
+    "size": 123456,
+    "category": "Videos",
+    "createdAt": "2026-10-14T00:00:00.000Z",
+    "path": "bahan/video/program.mp4"
+  }]
+}
+Gunakan video MP4 atau WebM dengan pengekodan yang disokong pelayar. Muat naik fail video bersama fail kandungan ke GitHub untuk diterbitkan.
+
+LAGU RASMI
+Semua lagu menggunakan pautan Canva dalam senarai videos di data/kandungan.json. Fail MOV dan MP4 lagu telah dibuang.
