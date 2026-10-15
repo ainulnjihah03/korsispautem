@@ -1063,6 +1063,63 @@
         }
       ],
       "attachments": []
+    },
+    {
+      "id": "video-google-drive-1",
+      "title": "KURSUS PENGURUSAN PUSAT PEMINDAHAN SIRI 9",
+      "description": "Video di Google Drive.",
+      "assignedTo": "video",
+      "dueDate": "",
+      "notes": "",
+      "createdAt": "2026-10-15T00:00:00.000Z",
+      "links": [
+        {
+          "id": "pautan-video-google-drive-1",
+          "title": "KURSUS PENGURUSAN PUSAT PEMINDAHAN SIRI 9",
+          "url": "https://drive.google.com/file/d/1fBWWWyQpUJWkfIiSKil8pLRRa3QBqocV/view?usp=drivesdk",
+          "description": "Buka video di Google Drive.",
+          "createdAt": "2026-10-15T00:00:00.000Z"
+        }
+      ],
+      "attachments": []
+    },
+    {
+      "id": "video-google-drive-2",
+      "title": "LATIHAN MEDAN SIRI 9",
+      "description": "Video di Google Drive.",
+      "assignedTo": "video",
+      "dueDate": "",
+      "notes": "",
+      "createdAt": "2026-10-15T00:00:00.000Z",
+      "links": [
+        {
+          "id": "pautan-video-google-drive-2",
+          "title": "LATIHAN MEDAN SIRI 9",
+          "url": "https://drive.google.com/file/d/1nStH518M79viqJvbMLHJNO1gIe_KKNeo/view?usp=drivesdk",
+          "description": "Buka video di Google Drive.",
+          "createdAt": "2026-10-15T00:00:00.000Z"
+        }
+      ],
+      "attachments": []
+    },
+    {
+      "id": "video-google-drive-3",
+      "title": "KURSUS BAKAL PEGAWAI SIRI 9",
+      "description": "Video di Google Drive.",
+      "assignedTo": "video",
+      "dueDate": "",
+      "notes": "",
+      "createdAt": "2026-10-15T00:00:00.000Z",
+      "links": [
+        {
+          "id": "pautan-video-google-drive-3",
+          "title": "KURSUS BAKAL PEGAWAI SIRI 9",
+          "url": "https://drive.google.com/file/d/1U2nEgXiN2U08zLW3lWieWTvBFErFIyQT/view?usp=drivesdk",
+          "description": "Buka video di Google Drive.",
+          "createdAt": "2026-10-15T00:00:00.000Z"
+        }
+      ],
+      "attachments": []
     }
   ]
 }
