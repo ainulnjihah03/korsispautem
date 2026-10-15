@@ -187,6 +187,9 @@ body.dark .posting-alert-item:hover{background:#51331b}
   :root{--row-height:112px;--row-padding:8px 10px;--row-icon:38px}
   #content .album-card{grid-template-columns:var(--row-icon) minmax(0,1fr);gap:3px 9px}
   #content .album-cover,#content .media-preview>i{font-size:18px}
-  #content .media-info{display:block}
-  #content .media-actions{margin-top:6px}
+  #content .media-card{gap:8px}
+  #content .media-info{display:grid;grid-template-columns:minmax(0,1fr) 66px;column-gap:8px}
+  #content .media-info h3{grid-column:1}
+  #content .media-actions{display:flex;flex-direction:column;gap:4px;grid-column:2;grid-row:1 / span 4;margin:0}
+  #content .media-actions .button{width:100%;min-height:44px;padding:7px 6px;gap:5px}
 }
