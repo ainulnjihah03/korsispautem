@@ -8,7 +8,7 @@
   const TITLE_BM = {'Mid-Sem Break':'Cuti Pertengahan Semester','Study Week':'Minggu Ulang Kaji','Final Exam':'Peperiksaan Akhir','Welcome Back for new Sem (Kuliah Semester II)':'Selamat Kembali ke Semester Baharu (Kuliah Semester II)'};
   function bahasaTugasan(task) {
     const title = TITLE_BM[task.title];
-    const assignedTo = {'Junior 1':'Ahli Baharu 1','Junior 2':'Ahli Baharu 2'}[task.assignedTo] || task.assignedTo;
+    const assignedTo = {'Junior 1':'Shafika','Junior 2':'Safea','Ahli Baharu 1':'Shafika','Ahli Baharu 2':'Safea'}[task.assignedTo] || task.assignedTo;
     return {...task, assignedTo, ...(title ? {title, description:typeof task.description==='string'?task.description.replace(task.title,title):task.description} : {})};
   }
   const $ = (s, root = document) => root.querySelector(s);
@@ -69,7 +69,7 @@
   function empty(title,sub) {return `<div class="empty">${icon('folder-open')}<h3>${title}</h3><p>${sub}</p></div>`;}
   function memberColor(name) {
     const key = name.trim().toLowerCase();
-    const colors = {darwish:'#2457a7',natasha:'#7542a3',rashidah:'#087970',wahidah:'#a53670',iskandar:'#b85206','junior 1':'#39752a','junior 2':'#4c45a0','ahli baharu 1':'#39752a','ahli baharu 2':'#4c45a0',semua:'#546171'};
+    const colors = {darwish:'#2457a7',natasha:'#7542a3',rashidah:'#087970',wahidah:'#a53670',iskandar:'#b85206','junior 1':'#39752a','junior 2':'#4c45a0','ahli baharu 1':'#39752a','ahli baharu 2':'#4c45a0',shafika:'#39752a',safea:'#4c45a0',semua:'#546171'};
     if (colors[key]) return colors[key];
     const hash = Array.from(key).reduce((n,c)=>(n*31+c.charCodeAt(0))>>>0,0);
     return `hsl(${hash%360} 58% 34%)`;
@@ -388,6 +388,11 @@
   $('#modal').addEventListener('cancel',e=>{if(busy)e.preventDefault();else detailId=null;});
   $('#preview').addEventListener('close',()=>{const video=$('video',$('#preview'));if(video)video.pause();$('#preview-content').replaceChildren();if(previewURL)URL.revokeObjectURL(previewURL);previewURL=null;});
   async function init() {
+    if(location.protocol==='file:'){
+      warning('Halaman dibuka terus daripada fail. Jalankan Laragon dan buka http://localhost/korsispautem/ supaya kandungan dapat dimuatkan.');
+      $('#content').innerHTML=empty('Buka melalui Laragon','Akses http://localhost/korsispautem/ selepas menghidupkan pelayan web Laragon; jangan buka index.html secara terus.');
+      return;
+    }
     try {
       const response=await fetch('data/kandungan.json',{cache:'no-store'});
       if(!response.ok)throw new Error('Fail kandungan tidak dapat dimuatkan.');
